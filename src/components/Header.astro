@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import HeaderLink from "./HeaderLink.astro";
+import DarkModeSwitch from "../components/DarkModeSwitch.astro";
 ---
 
 <header>
@@ -29,19 +30,25 @@ import HeaderLink from "./HeaderLink.astro";
         <HeaderLink href="/about">About</HeaderLink>
       </div>
     </div>
-    <div class="social-links flex items-center justify-center gap-4">
-      <a href="https://www.linkedin.com/in/abdelghafour-echikr" target="_blank">
-        <span class="sr-only">Connect with me on Linkedin</span>
-        <Icon name="linkedin" size={30} />
-      </a>
-      <a href="https://twitter.com/Abdelghafour1_" target="_blank">
-        <span class="sr-only">Follow me on Twitter</span>
-        <Icon name="twitter" size={30} />
-      </a>
-      <a href="https://github.com/Abdelghafour122" target="_blank">
-        <span class="sr-only">Go to my GitHub repo</span>
-        <Icon name="github" size={30} />
-      </a>
+    <div class="right flex items-center justify-center gap-7">
+      <DarkModeSwitch />
+      <div class="social-links flex items-center justify-center gap-4">
+        <a
+          href="https://www.linkedin.com/in/abdelghafour-echikr"
+          target="_blank"
+        >
+          <span class="sr-only">Connect with me on Linkedin</span>
+          <Icon name="linkedin" size={30} />
+        </a>
+        <a href="https://twitter.com/Abdelghafour1_" target="_blank">
+          <span class="sr-only">Follow me on Twitter</span>
+          <Icon name="twitter" size={30} />
+        </a>
+        <a href="https://github.com/Abdelghafour122" target="_blank">
+          <span class="sr-only">Go to my GitHub repo</span>
+          <Icon name="github" size={30} />
+        </a>
+      </div>
     </div>
   </nav>
 </header>
