@@ -11,14 +11,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <script is:inline>
+      const theme = localStorage.getItem("theme"),
+        isSystemDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+      theme === "dark" || (!theme && isSystemDark)
+        ? document.documentElement.classList.add("dark")
+        : theme === "light"
+          ? document.documentElement.classList.remove("dark")
+          : theme === "system" &&
+            isSystemDark &&
+            document.documentElement.classList.add("dark");
+    </script>
     <Header />
     <main
       class="index w-full flex flex-col items-center justify-center bg-[url('bg-stars.svg')] bg-no-repeat bg-cover"
     >
       <div class="text flex flex-col text-center justify-center w-[960px]">
-        <h1 class="text-center">Hello 👋, My name is Abdelghafour Echikr</h1>
-        <p class="text-2xl">Software Engineering Student | Web Developer</p>
-        <p class="text-center text-4xl">
+        <h1 class="text-center text-stone-800">
+          Hello 👋, My name is Abdelghafour Echikr
+        </h1>
+        <p class="text-2xl text-stone-800">
+          Software Engineering Student | Web Developer
+        </p>
+        <p class="text-center text-4xl text-stone-800">
           I'm an Algerian Web Developer, currently a college student, who's
           passionate about tech, building and developing websites.
         </p>

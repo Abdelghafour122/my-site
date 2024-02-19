@@ -1,18 +1,67 @@
----
-// maybe make the stars background everywhere
-// or maybe use the mountains or another bg for every page
----
-
-<div class="theme-switch">
-  <button><span>☀️</span></button>
-  <button><span>🌙</span></button>
-</div>
+<button id="theme-switch" class="">
+  <span id="sun" class="hidden"> ☀️ </span>
+  <span id="moon" class="hidden"> 🌙 </span>
+  <span id="system" class="hidden"> 🖥️ </span>
+</button>
 
 <script>
-  // do this
-  function changeColorTheme() {
-    // use local storage
-    // use the html class="dark" to turn on/off dark
-    // the rest is in tailwind dark class
+  const themeSwitch = document.getElementById("theme-switch") as HTMLDivElement;
+  const sunIcon = document.getElementById("sun");
+  const moonIcon = document.getElementById("moon");
+  const systemIcon = document.getElementById("system");
+
+  type Theme = "dark" | "light" | "system";
+
+  function getCurrentTheme(): Theme {
+    const theme = localStorage.getItem("theme");
+    if (!theme) {
+      return "system";
+    }
+
+    return theme as Theme;
+  }
+
+  const isSystemDark = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
+
+  function changeColorThemeIcon(theme: Theme) {
+    if (theme === "light") {
+      moonIcon?.classList.add("hidden");
+      sunIcon?.classList.remove("hidden");
+      systemIcon?.classList.add("hidden");
+    } else if (theme === "dark") {
+      moonIcon?.classList.remove("hidden");
+      sunIcon?.classList.add("hidden");
+      systemIcon?.classList.add("hidden");
+    } else {
+      moonIcon?.classList.add("hidden");
+      sunIcon?.classList.add("hidden");
+      systemIcon?.classList.remove("hidden");
+    }
+  }
+
+  if (themeSwitch) {
+    const theme = getCurrentTheme();
+    changeColorThemeIcon(theme);
+
+    themeSwitch.addEventListener("click", () => {
+      const theme = getCurrentTheme();
+      if (theme === "dark") {
+        localStorage.setItem("theme", "light");
+        document.documentElement.classList.remove("dark");
+      } else if (theme === "light") {
+        localStorage.setItem("theme", "system");
+        if (isSystemDark) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        localStorage.setItem("theme", "dark");
+        document.documentElement.classList.add("dark");
+      }
+      changeColorThemeIcon(getCurrentTheme());
+    });
   }
 </script>
