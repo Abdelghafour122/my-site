@@ -1,5 +1,5 @@
 ---
-import BlogPostLayout from "../layouts/BlogPostLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 
 const SOME_PROJECTS = [
@@ -26,84 +26,98 @@ const SOME_PROJECTS = [
 ];
 ---
 
-<BlogPostLayout
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date("August 08 2021")}
-  heroImage="/blog-placeholder-about.jpg"
->
-  <p>
-    Hey there! I'm a 22-year-old web developer from Algeria. I kicked off my
-    coding journey at 19, and let me tell you, it's been a wild ride of love
-    (mostly) and a bit of a love/hate dance. Excited to connect with fellow tech
-    enthusiasts, make cool things, and dive into new adventures!
-  </p>
+<BaseLayout>
+  <main class="w-[960px]">
+    <div class="intro mb-10">
+      <div class="w-full flex items-center justify-center gap-8 mb-8">
+        <img
+          src="/blog-placeholder-about.jpg"
+          width={500}
+          height={500}
+          alt="portrait-img"
+        />
 
-  <p>
-    I have a Bachelor's degree in Computer Science and I'm currently pursuing a
-    master's degree in Software Engineering.
-  </p>
+        <p>
+          Hey there! I'm a 22-year-old web developer from Algeria. I kicked off
+          my coding journey at 19, and let me tell you, it's been a wild ride of
+          love (mostly) and a bit of a love/hate dance. Excited to connect with
+          fellow tech enthusiasts, make cool things, and dive into new
+          adventures!
+        </p>
+      </div>
 
-  <p>
-    I'm all about sipping coffee, throwing myself into a room, and conjuring up
-    some awesome creations.
-  </p>
+      <p>
+        I have a Bachelor's degree in Computer Science and I'm currently
+        pursuing a master's degree in Software Engineering.
+      </p>
 
-  <div class="skills mb-10">
-    <h2>Skills:</h2>
-    <p>I'm skilled in these technologies, also looking to learn much more!</p>
-    <div class="icons w-full flex flex-wrap gap-[2rem] justify-center">
-      <Icon name="css" size={70} color="#264de4" />
-      <Icon name="sass" size={70} color="#c69" />
-      <Icon name="javascript" size={70} />
-      <Icon name="typescript" size={70} />
-      <Icon name="react" size={70} class="animate-spin-slow" color="#149eca" />
-      <Icon name="next-js" size={70} />
-      <Icon name="tailwindcss" size={70} />
-      <Icon name="nodejs" size={70} />
+      <p>
+        I'm all about sipping coffee, throwing myself into a room, and conjuring
+        up some awesome creations.
+      </p>
     </div>
-  </div>
 
-  <div class="projects mb-10">
-    <h2>Projects:</h2>
-    <p>Take a look at some of my projects:</p>
-    <ul class="w-full flex flex-wrap gap-8">
-      {
-        SOME_PROJECTS.map((project) => {
-          return (
-            <li class="project w-full text-center md:w-[calc(50%_-_1rem)] md:text-left group">
-              <a class="w-full h-full" href="#">
-                <img
-                  src={`/${project.img}`}
-                  alt=""
-                  class="transition-shadow group-hover:shadow-2xl"
-                />
-                <h4 class="transition-colors mb-0 group-hover:text-[rgb(var(--accent))]">
-                  {project.name}
-                </h4>
-                <p class="transition-colors mb-2 text-[rgb(var(--gray))] group-hover:text-[rgb(var(--accent))]">
-                  {project.desc}
-                </p>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </div>
+    <section class="skills mb-10">
+      <h2>Skills:</h2>
+      <p>I'm skilled in these technologies, also looking to learn much more!</p>
+      <div class="icons w-full flex flex-wrap gap-[2rem] justify-center">
+        <Icon name="css" size={70} color="#264de4" />
+        <Icon name="sass" size={70} color="#c69" />
+        <Icon name="javascript" size={70} />
+        <Icon name="typescript" size={70} />
+        <Icon
+          name="react"
+          size={70}
+          class="animate-spin-slow"
+          color="#149eca"
+        />
+        <Icon name="next-js" size={70} />
+        <Icon name="tailwindcss" size={70} />
+        <Icon name="nodejs" size={70} />
+      </div>
+    </section>
 
-  <div class="contact mb-10">
-    <h2>Contact me!</h2>
-    <p>
-      Questions or collaborations? Click the button below to get in touch.
-      Looking forward to hearing from you!
-    </p>
-    <a
-      href="mailto:echikr.abdelghafour@hotmail.com"
-      target="_blank"
-      class="flex items-center justify-center rounded-md border-4 px-2 py-1 w-fit text-3xl text-[var(--black)] border-[var(--black)] font-['Londrina_Solid'] hover:shadow-lg transition-all"
-    >
-      Contact me
-    </a>
-  </div>
-</BlogPostLayout>
+    <section class="projects mb-10">
+      <h2>Projects:</h2>
+      <p>Take a look at some of my projects:</p>
+      <ul class="w-full flex flex-wrap gap-8">
+        {
+          SOME_PROJECTS.map((project) => {
+            return (
+              <li class="project w-full text-center md:w-[calc(50%_-_1rem)] md:text-left group">
+                <a class="w-full h-full" href="#">
+                  <img
+                    src={`/${project.img}`}
+                    alt=""
+                    class="transition-shadow group-hover:shadow-2xl"
+                  />
+                  <h4 class="transition-colors mb-0 group-hover:text-[rgb(var(--accent))]">
+                    {project.name}
+                  </h4>
+                  <p class="transition-colors mb-2 text-[rgb(var(--gray))] group-hover:text-[rgb(var(--accent))]">
+                    {project.desc}
+                  </p>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+
+    <section class="contact mb-10">
+      <h2>Contact me!</h2>
+      <p>
+        Questions or collaborations? Click the button below to get in touch.
+        Looking forward to hearing from you!
+      </p>
+      <a
+        href="mailto:echikr.abdelghafour@hotmail.com"
+        target="_blank"
+        class="flex items-center justify-center rounded-md border-4 px-2 py-1 w-fit text-3xl text-[var(--black)] border-[var(--black)] font-['Londrina_Solid'] hover:shadow-lg transition-all"
+      >
+        Contact me
+      </a>
+    </section>
+  </main>
+</BaseLayout>
