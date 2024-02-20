@@ -7,6 +7,9 @@ module.exports = {
         "spin-slow": "spin 14s linear infinite",
       },
     },
+    fontFamily: {
+      Londrina: "Londrina Solid",
+    },
   },
   darkMode: "class",
   plugins: [],

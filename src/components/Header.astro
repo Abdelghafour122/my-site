@@ -4,7 +4,9 @@ import HeaderLink from "./HeaderLink.astro";
 import DarkModeSwitch from "../components/DarkModeSwitch.astro";
 ---
 
-<header>
+<header
+  class="bg-stone-50 dark:bg-stone-800 drop-shadow-[0_2px_8px_rgba(var(--black),0.05)] px-4 py-0 m-0"
+>
   <nav class="flex items-center justify-between py-2">
     <div class="left flex items-center gap-9">
       <div class="logo flex">
@@ -23,15 +25,24 @@ import DarkModeSwitch from "../components/DarkModeSwitch.astro";
         <a
           href="https://www.linkedin.com/in/abdelghafour-echikr"
           target="_blank"
+          class="text-stone-800 dark:text-stone-200"
         >
           <span class="sr-only">Connect with me on Linkedin</span>
           <Icon name="linkedin" size={30} title="linkedin" />
         </a>
-        <a href="https://twitter.com/Abdelghafour1_" target="_blank">
+        <a
+          href="https://twitter.com/Abdelghafour1_"
+          target="_blank"
+          class="text-stone-800 dark:text-stone-200"
+        >
           <span class="sr-only">Follow me on Twitter</span>
           <Icon name="twitter" size={30} title="twitter" />
         </a>
-        <a href="https://github.com/Abdelghafour122" target="_blank">
+        <a
+          href="https://github.com/Abdelghafour122"
+          target="_blank"
+          class="text-stone-800 dark:text-stone-200"
+        >
           <span class="sr-only">Go to my GitHub repo</span>
           <Icon name="github" size={30} title="github" />
         </a>
@@ -40,29 +51,6 @@ import DarkModeSwitch from "../components/DarkModeSwitch.astro";
   </nav>
 </header>
 <style>
-  header {
-    margin: 0;
-    padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
-
-  .logo {
-    display: flex;
-  }
-
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav a {
-    color: var(--black);
-  }
   nav a.active {
     text-decoration: none;
     color: var(--accent);
