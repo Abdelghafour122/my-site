@@ -4,6 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+/* replace these styles with tailwind  */
+
 :root {
   --accent: #32737d;
   --accent-dark: #000d8a;
@@ -47,8 +49,9 @@ main {
   margin: auto;
   padding: 3em 1em;
 }
+/* find a way to remove this */
 main:not(.index) {
-  width: 720px;
+  /* width: 720px; */
 }
 h1,
 h2,
@@ -80,7 +83,7 @@ strong,
 b {
   font-weight: 700;
 }
-a {
+a.link {
   color: var(--accent);
 }
 a:hover {
