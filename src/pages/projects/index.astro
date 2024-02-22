@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 
-const posts = (await getCollection("blog")).sort(
+const projects = (await getCollection("projects")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
@@ -22,24 +22,24 @@ const posts = (await getCollection("blog")).sort(
       <section>
         <ul class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 m-0 p-0">
           {
-            posts.map((post) => (
+            projects.map((project) => (
               <li class="group/item w-full text-center md:w-[calc(50%_-_1rem)] md:text-left first:w-full first:mb-0 md:first:mb-4 first:text-center">
                 <a
-                  href={`/blog/${post.slug}/`}
+                  href={`/projects/${project.slug}/`}
                   class="group/link [&_>_*]:transition"
                 >
                   <img
                     width={720}
                     height={360}
-                    src={post.data.heroImage}
-                    alt="blog-hero-img"
+                    src={project.data.heroImage}
+                    alt="projects-hero-img"
                     class="mb-2 rounded-xl group-hover/link:shadow-2xl group-first/item:w-full"
                   />
                   <h4 class="title m-0 text-[rgb(var(--black))] leading-none group-hover/link:text-[rgb(var(--accent))] group-first/item:text-[2.369rem]">
-                    {post.data.title}
+                    {project.data.title}
                   </h4>
                   <p class="date m-0 text-[rgb(var(--gray))] group-hover/link:text-[rgb(var(--accent))]">
-                    <FormattedDate date={post.data.pubDate} />
+                    <FormattedDate date={project.data.pubDate} />
                   </p>
                 </a>
               </li>

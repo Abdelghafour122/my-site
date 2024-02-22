@@ -1,29 +1,50 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main
-      class="index w-full flex flex-col items-center justify-center bg-[url('bg-stars.svg')] bg-no-repeat bg-cover"
-    >
-      <div class="text flex flex-col text-center justify-center w-[960px]">
-        <h1 class="text-center">Hello 👋, My name is Abdelghafour Echikr</h1>
-        <p class="text-2xl">Software Engineering Student | Web Developer</p>
-        <p class="text-center text-4xl">
-          I'm an Algerian Web Developer, currently a college student, who's
-          passionate about tech, building and developing websites.
+<BaseLayout>
+  <main
+    class="index w-full flex flex-col items-center justify-center bg-[url('bg-stars.svg')] bg-no-repeat bg-cover"
+  >
+    <div class="text flex flex-col text-center justify-center w-[960px]">
+      <h1 class="text-center text-stone-800">
+        Hello 👋, My name is Abdelghafour Echikr
+      </h1>
+      <p class="text-2xl text-stone-800">
+        Software Engineering Student | Web Developer
+      </p>
+      <div class="desc w-full flex flex-col items-center justify-center gap-0">
+        <p class="text-center text-3xl text-stone-800 mb-0">
+          I'm a Web Developer & Software Engineering college student, who's
+          passionate about tech, building and developing websites, and learning
+          about software.
         </p>
+        <a href="/about" class="text-center"> More about me </a>
       </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
+        repudiandae non veritatis expedita dicta facere perspiciatis, esse
+        inventore quia, libero quos.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
+        repudiandae non veritatis expedita dicta facere perspiciatis, esse
+        inventore quia, libero quos.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
+        repudiandae non veritatis expedita dicta facere perspiciatis, esse
+        inventore quia, libero quos.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
+        repudiandae non veritatis expedita dicta facere perspiciatis, esse
+        inventore quia, libero quos.
+      </p>
+    </div>
+  </main>
+</BaseLayout>
