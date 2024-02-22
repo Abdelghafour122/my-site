@@ -1,34 +1,16 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 
-const SOME_PROJECTS = [
-  {
-    name: "A project",
-    desc: "a description",
-    img: "blog-placeholder-2.jpg",
-  },
-  {
-    name: "Another project",
-    desc: "another description",
-    img: "blog-placeholder-3.jpg",
-  },
-  {
-    name: "Yet Another project",
-    desc: "yet another description",
-    img: "blog-placeholder-4.jpg",
-  },
-  {
-    name: "A last project",
-    desc: "A last description",
-    img: "blog-placeholder-5.jpg",
-  },
-];
+const projects = (await getCollection("projects"))
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .slice(0, 4);
 ---
 
 <BaseLayout>
   <main class="w-[960px]">
-    <div class="intro mb-10">
+    <div class="intro mb-20">
       <div class="w-full flex items-center justify-center gap-10 mb-8">
         <img
           src="/blog-placeholder-about.jpg"
@@ -57,7 +39,7 @@ const SOME_PROJECTS = [
       </p>
     </div>
 
-    <section class="skills mb-10">
+    <section class="skills mb-20">
       <h2>Skills:</h2>
       <p>I'm skilled in these technologies, also looking to learn much more!</p>
       <div class="icons w-full flex flex-wrap gap-[2rem] justify-center">
@@ -77,25 +59,29 @@ const SOME_PROJECTS = [
       </div>
     </section>
 
-    <section class="projects mb-10">
+    <section class="projects mb-20">
       <h2>Projects:</h2>
       <p>Take a look at some of my projects:</p>
       <ul class="w-full flex flex-wrap gap-8">
         {
-          SOME_PROJECTS.map((project) => {
+          projects.map((project) => {
+            const {
+              data: { title, description, heroImage },
+              slug,
+            } = project;
             return (
               <li class="project w-full text-center md:w-[calc(50%_-_1rem)] md:text-left group">
-                <a class="w-full h-full" href="#">
+                <a class="w-full h-full" href={`/projects/${slug}`}>
                   <img
-                    src={`/${project.img}`}
-                    alt=""
+                    src={`${heroImage}`}
+                    alt="project-hero-img"
                     class="transition-shadow group-hover:shadow-2xl"
                   />
-                  <h4 class="transition-colors mb-0 group-hover:text-[rgb(var(--accent))]">
-                    {project.name}
+                  <h4 class="transition-colors my-2 group-hover:text-[rgb(var(--accent))]">
+                    {title}
                   </h4>
-                  <p class="transition-colors mb-2 text-[rgb(var(--gray))] group-hover:text-[rgb(var(--accent))]">
-                    {project.desc}
+                  <p class="transition-colors m-0 leading-tight text-[rgb(var(--gray))] group-hover:text-[rgb(var(--accent))]">
+                    {description}
                   </p>
                 </a>
               </li>
@@ -103,6 +89,13 @@ const SOME_PROJECTS = [
           })
         }
       </ul>
+      <div class="w-full text-center mt-8">
+        <a
+          href="/projects"
+          class="text-center underline font-semibold uppercase transition-colors"
+          >See all projects</a
+        >
+      </div>
     </section>
 
     <section class="contact mb-10">
