@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import { IconEnum } from "@/consts";
+
+type Props = {
+  srText: string;
+  iconName: IconEnum;
+};
+
+const { iconName, srText } = Astro.props;
+---
+
+<a
+  href="https://www.linkedin.com/in/abdelghafour-echikr"
+  target="_blank"
+  class="text-stone-800 dark:text-stone-200 dark:hover:text-[var(--accent)] transition-colors"
+>
+  <span class="sr-only">{srText}</span>
+  <Icon name={iconName} size={30} title={iconName} />
+</a>
