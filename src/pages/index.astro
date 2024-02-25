@@ -6,45 +6,78 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   <main
     class="index w-full flex flex-col items-center justify-center bg-[url('bg-stars.svg')] bg-no-repeat bg-cover"
   >
-    <div class="text flex flex-col text-center justify-center w-[960px]">
-      <h1 class="text-center text-stone-800">
-        Hello 👋, My name is Abdelghafour Echikr
-      </h1>
-      <p class="text-2xl text-stone-800">
-        Software Engineering Student | Web Developer
-      </p>
-      <div class="desc w-full flex flex-col items-center justify-center gap-0">
-        <p class="text-center text-3xl text-stone-800 mb-0">
-          I'm a Web Developer & Software Engineering college student, who's
-          passionate about tech, building and developing websites, and learning
-          about software.
+    <div
+      class="text flex flex-col text-center justify-center items-center w-[960px] gap-10"
+    >
+      <div class="upper">
+        <h1
+          class="text-center text-stone-800 dark:text-stone-50 backdrop-blur-sm"
+        >
+          Hello 👋, My name is Abdelghafour Echikr
+        </h1>
+        <p class="text-2xl text-stone-800 dark:text-stone-50 backdrop-blur-sm">
+          Software Engineering Student | Web Developer
         </p>
-        <a href="/about" class="text-center"> More about me </a>
+        <div
+          class="desc w-full flex flex-col items-center justify-center gap-0"
+        >
+          <p
+            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+          >
+            I'm a Web Developer & Software Engineering college student, who's
+            passionate about tech, building and developing websites, and
+            learning about software.
+          </p>
+          <a
+            href="/about"
+            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+          >
+            More about me
+          </a>
+        </div>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
-        repudiandae non veritatis expedita dicta facere perspiciatis, esse
-        inventore quia, libero quos.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
-        repudiandae non veritatis expedita dicta facere perspiciatis, esse
-        inventore quia, libero quos.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
-        repudiandae non veritatis expedita dicta facere perspiciatis, esse
-        inventore quia, libero quos.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-        officiis pariatur voluptatibus at sequi aliquid unde tempora fugiat
-        repudiandae non veritatis expedita dicta facere perspiciatis, esse
-        inventore quia, libero quos.
-      </p>
+      <div class="w-3/5 flex flex-col items-center justify-center gap-10">
+        <div class="projects">
+          <p
+            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+          >
+            Take a look at my projects, see what I'm working on
+          </p>
+          <a
+            href="/projects"
+            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+            >See my projects</a
+          >
+        </div>
+        <div class="articles">
+          <p
+            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+          >
+            I am relatively new to writing, but you can find examples of my
+            articles on my blog section
+          </p>
+          <a
+            href="/blog"
+            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+            >See my blog</a
+          >
+        </div>
+        <div class="contact flex flex-col items-center justify-center gap-3">
+          <p
+            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+          >
+            If you're ready to bring ideas to life or collaborate, hit the
+            button below!
+          </p>
+          <a
+            href="mailto:echikr.abdelghafour@hotmail.com"
+            target="_blank"
+            class="flex items-center justify-center rounded-md border-4 px-2 py-1 w-fit text-3xl text-[var(--black)] border-[var(--black)] font-['Londrina_Solid'] hover:shadow-lg transition-all backdrop-blur-sm text-stone-800 dark:text-stone-50"
+          >
+            Contact me
+          </a>
+        </div>
+      </div>
     </div>
   </main>
 </BaseLayout>
