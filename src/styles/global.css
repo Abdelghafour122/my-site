@@ -31,12 +31,17 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* body {
+  @apply bg-gradient-to-b;
+} */
+
 body {
   font-family: "Atkinson", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -49,10 +54,7 @@ main {
   margin: auto;
   padding: 3em 1em;
 }
-/* find a way to remove this */
-main:not(.index) {
-  /* width: 720px; */
-}
+
 h1,
 h2,
 h3,
@@ -112,7 +114,6 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
   border-radius: 2px;
 }
 pre {

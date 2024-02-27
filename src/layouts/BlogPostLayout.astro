@@ -4,6 +4,7 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import FormattedDate from "@components/FormattedDate.astro";
+import Prose from "@components/Prose.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -15,7 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
 
-  <body>
+  <body class="bg-stone-50 dark:bg-stone-900">
     <Header />
     <main class="w-[calc(100%_-_2em)] max-w-full">
       <article>
@@ -32,9 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             )
           }
         </div>
-        <div
-          class="prose w-[720px] max-w-[calc(100%_-_2em)] m-auto p-6 text-[rgb(var(--gray-dark))]"
-        >
+        <Prose>
           <div class="title mb-5 py-4 px-0 text-center leading-none">
             <div class="date mb-6 text-[rgb(var(--gray))]">
               <FormattedDate date={pubDate} />
@@ -46,11 +45,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
               }
             </div>
-            <h1 class="mb-6">{title}</h1>
+            <h1 class="">
+              {title}
+            </h1>
             <hr />
           </div>
           <slot />
-        </div>
+        </Prose>
       </article>
     </main>
     <Footer />
