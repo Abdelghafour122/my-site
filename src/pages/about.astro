@@ -10,7 +10,7 @@ const projects = (await getCollection("projects"))
 
 <BaseLayout>
   <main class="w-[960px]">
-    <div class="intro mb-20">
+    <div class="intro mb-32">
       <div class="w-full flex items-center justify-center gap-10 mb-8">
         <img
           src="/blog-placeholder-about.jpg"
@@ -39,9 +39,13 @@ const projects = (await getCollection("projects"))
       </p>
     </div>
 
-    <section class="skills mb-20">
+    <section
+      class="skills mb-32 flex flex-col items-center justify-center w-full"
+    >
       <h2 class="text-stone-800 dark:text-stone-100">Skills:</h2>
-      <p class="text-stone-800 dark:text-stone-300">
+      <p
+        class="text-stone-800 dark:text-stone-300 text-center max-w-lg leading-tight"
+      >
         I'm skilled in these technologies, also looking to learn much more!
       </p>
       <div class="icons w-full flex flex-wrap gap-[2rem] justify-center">
@@ -61,9 +65,13 @@ const projects = (await getCollection("projects"))
       </div>
     </section>
 
-    <section class="projects mb-20">
+    <section
+      class="projects mb-32 flex flex-col items-center justify-center w-full"
+    >
       <h2 class="text-stone-800 dark:text-stone-100">Projects:</h2>
-      <p class="text-stone-800 dark:text-stone-300">
+      <p
+        class="text-stone-800 dark:text-stone-300 text-center max-w-lg leading-tight"
+      >
         Take a look at some of my projects:
       </p>
       <ul class="w-full flex flex-wrap gap-8">
@@ -102,9 +110,13 @@ const projects = (await getCollection("projects"))
       </div>
     </section>
 
-    <section class="contact mb-10">
+    <section
+      class="contact mb-10 flex flex-col items-center justify-center w-full"
+    >
       <h2 class="text-stone-800 dark:text-stone-100">Contact me!</h2>
-      <p class="text-stone-800 dark:text-stone-300">
+      <p
+        class="text-stone-800 dark:text-stone-300 text-center max-w-lg leading-tight"
+      >
         Questions or collaborations? Click the button below to get in touch.
         Looking forward to hearing from you!
       </p>

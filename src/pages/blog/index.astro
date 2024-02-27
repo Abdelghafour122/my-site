@@ -16,7 +16,7 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="bg-stone-50 dark:bg-stone-900 transition-colors">
     <Header />
     <main class="w-[960px]">
       <section>
@@ -35,7 +35,7 @@ const posts = (await getCollection("blog")).sort(
                     alt="blog-hero-img"
                     class="mb-2 rounded-xl group-hover/link:shadow-2xl group-first/item:w-full"
                   />
-                  <h4 class="title m-0 text-[rgb(var(--black))] leading-none group-hover/link:text-[rgb(var(--accent))] group-first/item:text-[2.369rem]">
+                  <h4 class="title m-0 text-[rgb(var(--black))] dark:text-stone-200 leading-none group-hover/link:text-[rgb(var(--accent))] group-first/item:text-[2.369rem]">
                     {post.data.title}
                   </h4>
                   <p class="date m-0 text-[rgb(var(--gray))] group-hover/link:text-[rgb(var(--accent))]">
