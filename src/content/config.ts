@@ -9,7 +9,7 @@ const blogCollection = defineCollection({
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    heroImage: z.string().optional(),
+    heroImage: z.string(),
   }),
 });
 
@@ -23,7 +23,7 @@ const projectsCollection = defineCollection({
     link: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    heroImage: z.string().optional(),
+    heroImage: z.string(),
   }),
 });
 
