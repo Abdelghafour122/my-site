@@ -4,8 +4,6 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-/* replace these styles with tailwind  */
-
 :root {
   --accent: #32737d;
   --accent-dark: #000d8a;
@@ -32,16 +30,11 @@
   font-display: swap;
 }
 
-/* body {
-  @apply bg-gradient-to-b;
-} */
-
 body {
   font-family: "Atkinson", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
-  /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
