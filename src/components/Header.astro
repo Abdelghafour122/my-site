@@ -15,7 +15,7 @@ import SocialLink from "./SocialLink.astro";
         <span class="sr-only">Logo</span>
         <Icon name="logo" size={50} title="that's my logo ;)" />
       </div>
-      <div class="internal-links flex items-center justify-center gap-6">
+      <div class="internal-links flex items-center justify-center gap-4">
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
@@ -28,11 +28,17 @@ import SocialLink from "./SocialLink.astro";
         <SocialLink
           iconName={IconEnum.linkedIn}
           srText="Connect with me on Linkedin"
+          link="https://www.linkedin.com/in/abdelghafour-echikr"
         />
-        <SocialLink iconName={IconEnum.twitter} srText="Follow me on Twitter" />
+        <SocialLink
+          iconName={IconEnum.twitter}
+          srText="Follow me on Twitter"
+          link="https://twitter.com/Abdelghafour1_"
+        />
         <SocialLink
           iconName={IconEnum.github}
           srText="Visit my GitHub profile"
+          link="https://github.com/Abdelghafour122"
         />
       </div>
     </div>
@@ -42,6 +48,7 @@ import SocialLink from "./SocialLink.astro";
   nav a.active {
     text-decoration: none;
     color: var(--accent);
+    font-weight: 900;
   }
   .social-links,
   .social-links a {
