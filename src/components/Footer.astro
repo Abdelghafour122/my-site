@@ -1,41 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-
+import { LINK_LIST } from "@/consts";
 const today = new Date();
-
-type footerLink = {
-  href: string;
-  sronlyText: string;
-  iconName: string;
-};
-
-const LINK_LIST: footerLink[] = [
-  {
-    href: "https://www.linkedin.com/in/abdelghafour-echikr",
-    iconName: "linkedin",
-    sronlyText: "Connect with me on Linkedin",
-  },
-  {
-    href: "https://twitter.com/Abdelghafour1_",
-    iconName: "twitter",
-    sronlyText: "Follow me on Twitter",
-  },
-  {
-    href: "https://github.com/Abdelghafour122",
-    iconName: "github",
-    sronlyText: "Go to my GitHub repo",
-  },
-  {
-    href: "mailto:echikr.abdelghafour@hotmail.com",
-    iconName: "mail",
-    sronlyText: "Contact Me",
-  },
-  {
-    href: "https://hashnode.com/@AbdelghafourE",
-    iconName: "hashnode",
-    sronlyText: "Visit my blog on hashnode",
-  },
-];
 ---
 
 <footer
@@ -46,13 +12,15 @@ const LINK_LIST: footerLink[] = [
     <Icon name="dzflag" size={30} title="algeria" />
   </p>
   &copy; {today.getFullYear()} All rights reserved.
-  <ul
-    class="social-links flex flex-row justify-center gap-4 mt-4 *:transition-colors [&>a]:p-2 [&>a]:text-[rgb(var(--gray))] dark:[&>a]:text-[rgb(var(--gray-light))] hover:[&>a]:text-[rgb(var(--gray-dark))] dark:hover:[&>a]:text-[rgb(var(--gray))]"
-  >
+  <ul class="social-links flex flex-row justify-center gap-4 mt-4">
     {
       LINK_LIST.map((link) => (
-        <li>
-          <a href={link.href} target="_blank">
+        <li class="p-1">
+          <a
+            href={link.href}
+            target="_blank"
+            class="transition-colors text-[rgb(var(--gray))] dark:text-[rgb(var(--gray-light))] hover:text-[rgb(var(--gray-dark))] dark:hover:text-[rgb(var(--gray))]"
+          >
             <span class="sr-only">{link.sronlyText}</span>
             <Icon name={link.iconName} size={30} title={link.iconName} />
           </a>
