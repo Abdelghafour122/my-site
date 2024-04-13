@@ -19,7 +19,23 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body class="bg-stone-50 dark:bg-stone-900">
     <Header />
-    <main class="w-[960px]">
+    <main class="w-[960px] flex flex-col gap-8">
+      <div class="text">
+        <h2 class="text-stone-800 dark:text-stone-100 tracking-wide">
+          My writing
+        </h2>
+        <p class="text-stone-800 dark:text-stone-300 leading-snug">
+          I started writing recently just for fun, about technical things that I
+          usually find interesting. You can find me here on
+          <a
+            class="font-extrabold transition-colors underline"
+            href="https://abdelghafour.hashnode.dev/">Hashnode</a
+          >.
+        </p>
+        <p class="text-stone-800 dark:text-stone-300 leading-snug">
+          Take a look at the articles below, that you might enjoy reading.
+        </p>
+      </div>
       <section>
         <ul class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 m-0 p-0">
           {
@@ -34,7 +50,7 @@ const posts = (await getCollection("blog")).sort(
                     loading="eager"
                     class="mb-2 rounded-xl group-hover/link:shadow-2xl group-first/item:w-full"
                   />
-                  <h4 class="title m-0 text-[rgb(var(--black))] dark:text-stone-200 leading-none group-hover/link:text-[rgb(var(--accent))] group-first/item:text-[2.369rem]">
+                  <h4 class="title m-0 text-stone-800 dark:text-stone-200 leading-none group-hover/link:text-[rgb(var(--accent))] group-first/item:text-[2.369rem]">
                     {post.data.title}
                   </h4>
                   <p class="date m-0 text-[rgb(var(--gray))] group-hover/link:text-[rgb(var(--accent))]">
