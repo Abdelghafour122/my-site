@@ -55,3 +55,14 @@ export const LINK_LIST: footerLink[] = [
     sronlyText: "Visit my blog on hashnode",
   },
 ];
+
+export const EDUCATION = [
+  {
+    title: "Masters of Software Engineering",
+    year: "2022 - 2025",
+  },
+  {
+    title: "Bachelors of Information Systems and Software Engineering",
+    year: "2019 - 2022",
+  },
+];
