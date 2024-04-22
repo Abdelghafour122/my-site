@@ -1,17 +1,30 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const birthday = new Date("08-12-2001");
+const now = new Date();
+
+const diffInMilliseconds = now.getTime() - birthday.getTime();
+const ageDate = new Date(diffInMilliseconds);
+
+const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 ---
 
 <BaseLayout>
-  <main class="index w-full flex flex-col items-center justify-center">
-    <div
+  <main
+    class="index flex flex-col items-center justify-center w-[960px] gap-64"
+  >
+    <section
       class="text flex flex-col text-center justify-center items-center w-auto lg:w-[960px] gap-10"
     >
       <div class="upper">
         <h1 class="text-center text-stone-800 dark:text-stone-50">
           Hello 👋, My name is Abdelghafour Echikr
         </h1>
-        <p class="text-2xl text-stone-800 dark:text-stone-50 m-0">
+        <p
+          class="font-bold text-3xl text-stone-800 dark:text-stone-50 m-0 font-[Lato]"
+        >
           Software Engineering Student | Web Developer
         </p>
         <div
@@ -24,7 +37,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             expanding my knowledge on software.
           </p>
           <a
-            href="/about"
+            href="#about"
             class="uppercase font-black underline dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
           >
             More about me
@@ -70,12 +83,143 @@ import BaseLayout from "@layouts/BaseLayout.astro";
           <a
             href="mailto:echikr.abdelghafour@hotmail.com"
             target="_blank"
-            class="px-4 py-2 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
+            class="py-4 px-12 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
           >
             Contact me
           </a>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="w-full flex items-start justify-center gap-10">
+        <div class="text">
+          <h2 class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide">
+            About me
+          </h2>
+          <p
+            class="text-stone-800 dark:text-stone-300 leading-snug flex flex-col items-start justify-start gap-3"
+          >
+            <span>I'm a {age}-year-old web developer from Algeria.</span>
+            <span
+              >Coming from a non-technical background I kicked off my coding
+              journey at 19 and it's been a wild ride of love (mostly) and a bit
+              of a love/hate dance</span
+            >
+            <span
+              >Excited to connect with fellow tech enthusiasts, build cool
+              things, and dive into new adventures!</span
+            >
+          </p>
+        </div>
+
+        <img
+          src="/blog-placeholder-about.jpg"
+          width={500}
+          height={500}
+          alt="portrait-img"
+        />
+      </div>
+    </section>
+
+    <!-- make a better layout for the skill images -->
+    <section
+      class="skills flex flex-col items-center justify-center w-full gap-4"
+    >
+      <h2 class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide">
+        Skills
+      </h2>
+      <p
+        class="text-stone-800 dark:text-stone-300 text-left leading-tight max-w-lg"
+      >
+        These are the technologies that I frequently use and enjoy working with,
+        also looking to learn much more!
+      </p>
+      <div class="icons w-full flex flex-wrap gap-[2rem] justify-center">
+        <Icon name="css" size={70} color="#264de4" />
+        <Icon name="sass" size={70} color="#c69" />
+        <Icon name="javascript" size={70} />
+        <Icon name="typescript" size={70} />
+        <Icon
+          name="react"
+          size={70}
+          class="animate-spin-slow"
+          color="#149eca"
+        />
+        <Icon name="next-js" size={70} />
+        <Icon name="tailwindcss" size={70} />
+        <Icon name="nodejs" size={70} />
+      </div>
+    </section>
+
+    <section
+      class="projects flex flex-col items-center justify-center w-full gap-5"
+    >
+      <h2 class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide">
+        Education
+      </h2>
+      <div class="w-full flex gap-4 items-start justify-between">
+        <div class="left flex flex-col items-start justify-center">
+          <h3
+            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
+          >
+            SAAD DAHLEB UNIVERSITY
+          </h3>
+          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
+            Masters of Software Engineering
+          </p>
+          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
+        </div>
+        <div class="right">
+          <p class="dark:text-[rgb(var(--gray-light))]">2022 - 2025</p>
+        </div>
+      </div>
+      <div class="w-full flex gap-4 items-start justify-between">
+        <div class="left flex flex-col items-start justify-center">
+          <h3
+            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
+          >
+            SAAD DAHLEB UNIVERSITY
+          </h3>
+          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
+            Bachelors of Information Systems and Software Engineering
+          </p>
+          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
+        </div>
+        <div class="right">
+          <p class="dark:text-[rgb(var(--gray-light))]">2019 - 2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="contact flex flex-col items-center justify-center w-full mb-24"
+    >
+      <h2
+        class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide mb-0"
+      >
+        Contact me!
+      </h2>
+      <div
+        class="text-stone-800 dark:text-stone-300 text-center leading-tight my-3 mb-5"
+      >
+        <div class="font-bold text-4xl text-stone-700 dark:text-stone-300 mb-5">
+          Questions or collaborations?
+        </div>
+        <div class="text-2xl text-stone-800 dark:text-stone-300">
+          Click the button below to get in touch
+        </div>
+        <div class="text-2xl text-stone-800 dark:text-stone-300">
+          Looking forward to hearing from you!
+        </div>
+      </div>
+      <a
+        href="mailto:echikr.abdelghafour@hotmail.com"
+        target="_blank"
+        class="py-4 px-12 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
+      >
+        Contact me
+      </a>
+    </section>
   </main>
 </BaseLayout>
