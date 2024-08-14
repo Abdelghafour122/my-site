@@ -74,7 +74,8 @@ a:hover {
   color: var(--accent);
 }
 p {
-  margin-bottom: 1em;
+  /* remove this, make custom margin or spacing */
+  /* margin-bottom: 1em; */
 }
 .prose p {
   margin-bottom: 2em;
