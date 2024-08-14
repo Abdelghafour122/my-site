@@ -1,81 +1,203 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const birthday = new Date("08-12-2001");
+const now = new Date();
+
+const diffInMilliseconds = now.getTime() - birthday.getTime();
+const ageDate = new Date(diffInMilliseconds);
+
+const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 ---
 
 <BaseLayout>
-  <main class="index w-full flex flex-col items-center justify-center">
-    <div
-      class="text flex flex-col text-center justify-center items-center w-[960px] gap-10"
+  <main
+    class="index flex flex-col items-center justify-center w-[960px] gap-64"
+  >
+    <section
+      class="text flex flex-col text-center justify-center items-center w-auto lg:w-[960px] gap-10"
     >
       <div class="upper">
-        <h1
-          class="text-center text-stone-800 dark:text-stone-50 backdrop-blur-sm"
-        >
+        <h1 class="text-center text-stone-800 dark:text-stone-50">
           Hello 👋, My name is Abdelghafour Echikr
         </h1>
-        <p class="text-2xl text-stone-800 dark:text-stone-50 backdrop-blur-sm">
+        <p
+          class="font-bold text-3xl text-stone-800 dark:text-stone-50 m-0 font-[Lato]"
+        >
           Software Engineering Student | Web Developer
         </p>
         <div
           class="desc w-full flex flex-col items-center justify-center gap-0"
         >
           <p
-            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+            class="text-center text-3xl text-stone-800 dark:text-stone-300 my-5"
           >
-            I'm a Web Developer & Software Engineering college student, who's
-            passionate about tech, building and developing websites, and
-            learning about software.
+            I'm passionate about tech, building and developing websites,
+            expanding my knowledge on software.
           </p>
           <a
-            href="/about"
-            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+            href="#about"
+            class="uppercase font-black underline dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
           >
             More about me
           </a>
         </div>
       </div>
-      <div class="w-3/5 flex flex-col items-center justify-center gap-10">
-        <div class="projects">
-          <p
-            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
+      <div
+        class="w-3/4 grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10"
+      >
+        <div class="left flex flex-col w-full gap-10">
+          <div
+            class="projects flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-7 gap-4"
           >
-            Take a look at my projects, see what I'm working on
-          </p>
-          <a
-            href="/projects"
-            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
-            >See my projects</a
+            <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
+              Take a look at my projects, see what I'm working on
+            </p>
+            <a
+              href="/projects"
+              class="uppercase font-black underline dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+              >See my projects</a
+            >
+          </div>
+          <div
+            class="articles flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-7 gap-4"
           >
+            <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
+              Visit my blog, see what I'm writing
+            </p>
+            <a
+              href="/blog"
+              class="uppercase font-black underline dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
+              >Visit my blog</a
+            >
+          </div>
         </div>
-        <div class="articles">
-          <p
-            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
-          >
-            I am relatively new to writing, but you can find examples of my
-            articles on my blog section
-          </p>
-          <a
-            href="/blog"
-            class="uppercase font-semibold underline backdrop-blur-sm dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] transition-colors"
-            >See my blog</a
-          >
-        </div>
-        <div class="contact flex flex-col items-center justify-center gap-3">
-          <p
-            class="text-center text-3xl text-stone-800 dark:text-stone-300 mb-0 backdrop-blur-sm"
-          >
+        <div
+          class="contact flex flex-col items-center justify-center gap-7 border border-stone-800 dark:border-stone-500 rounded-md p-7 h-full"
+        >
+          <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
             If you're ready to bring ideas to life or collaborate, hit the
             button below!
           </p>
           <a
             href="mailto:echikr.abdelghafour@hotmail.com"
             target="_blank"
-            class="flex items-center justify-center rounded-md border-4 px-2 py-1 w-fit text-3xl text-[var(--black)] border-[var(--black)] font-['Londrina_Solid'] hover:shadow-lg transition-all backdrop-blur-sm text-stone-800 dark:text-stone-50 dark:hover:text-[rgb(var(--gray))] dark:hover:border-[rgb(var(--gray))]"
+            class="py-4 px-12 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
           >
             Contact me
           </a>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="w-full flex items-start justify-center gap-10">
+        <div class="text text-stone-800 dark:text-stone-300">
+          <h2 class="text-6xl tracking-wide text-stone-800 dark:text-stone-100">
+            About me
+          </h2>
+          <p
+            class="leading-snug flex flex-col items-start justify-start gap-3 mb-3"
+          >
+            <span>I'm a {age}-year-old web developer from Algeria.</span>
+            <span
+              >Coming from a non-technical background I kicked off my coding
+              journey at 19 and it's been a wild ride of love (mostly) and a bit
+              of a love/hate dance.</span
+            >
+          </p>
+          <div class="skills mb-3">
+            <p class="text-stone-800 dark:text-stone-300 mb-3">
+              Here are some technologies I've been using:
+            </p>
+            <ul
+              class="technologies ml-4 grid grid-cols-2 text-stone-800 dark:text-stone-300 list-disc"
+            >
+              <li>Typescript</li>
+              <li>Tailwind</li>
+              <li>Reactjs</li>
+              <li>Nextjs</li>
+              <li>Astro</li>
+            </ul>
+          </div>
+          <span
+            >I'm excited to connect with fellow tech enthusiasts, build cool
+            things, and dive into new adventures!</span
+          >
+        </div>
+
+        <img src="/portrait.jpg" width={350} height={350} alt="portrait-img" />
+      </div>
+    </section>
+
+    <section
+      class="projects flex flex-col items-center justify-center w-full gap-5"
+    >
+      <h2 class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide">
+        Education
+      </h2>
+      <div class="w-full flex gap-4 items-start justify-between">
+        <div class="left flex flex-col items-start justify-center">
+          <h3
+            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
+          >
+            SAAD DAHLEB UNIVERSITY
+          </h3>
+          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
+            Masters of Software Engineering
+          </p>
+          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
+        </div>
+        <div class="right">
+          <p class="dark:text-[rgb(var(--gray-light))]">2022 - 2025</p>
+        </div>
+      </div>
+      <div class="w-full flex gap-4 items-start justify-between">
+        <div class="left flex flex-col items-start justify-center">
+          <h3
+            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
+          >
+            SAAD DAHLEB UNIVERSITY
+          </h3>
+          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
+            Bachelors of Information Systems and Software Engineering
+          </p>
+          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
+        </div>
+        <div class="right">
+          <p class="dark:text-[rgb(var(--gray-light))]">2019 - 2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="contact flex flex-col items-center justify-center w-full mb-24"
+    >
+      <h2
+        class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide mb-0"
+      >
+        Contact me!
+      </h2>
+      <div
+        class="text-stone-800 dark:text-stone-300 text-center leading-tight my-3 mb-5"
+      >
+        <div class="font-bold text-4xl text-stone-700 dark:text-stone-300 mb-5">
+          Questions or collaborations?
+        </div>
+        <div class="text-2xl text-stone-800 dark:text-stone-300">
+          Click the button below to get in touch
+        </div>
+        <div class="text-2xl text-stone-800 dark:text-stone-300">
+          Looking forward to hearing from you!
+        </div>
+      </div>
+      <a
+        href="mailto:echikr.abdelghafour@hotmail.com"
+        target="_blank"
+        class="py-4 px-12 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
+      >
+        Contact me
+      </a>
+    </section>
   </main>
 </BaseLayout>

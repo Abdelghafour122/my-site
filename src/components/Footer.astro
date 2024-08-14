@@ -1,10 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-
+import { LINK_LIST } from "@/consts";
 const today = new Date();
 ---
 
-<!-- dark:bg-gradient-to-b dark:from-stone-900 dark:to-stone-800 -->
 <footer
   class="px-4 pt-12 pb-32 text-center transition-colors text-[rgb(var(--gray))] dark:text-stone-100 bg-[linear-gradient(var(--gray-gradient))] dark:bg-none dark:bg-stone-900 dark:border-t dark:border-t-stone-400 bg-no-repeat"
 >
@@ -13,28 +12,20 @@ const today = new Date();
     <Icon name="dzflag" size={30} title="algeria" />
   </p>
   &copy; {today.getFullYear()} All rights reserved.
-  <div
-    class="social-links flex flex-row justify-center gap-2 mt-4 [&>*]:transition-colors [&>a]:p-2 [&>a]:text-[rgb(var(--gray))] dark:[&>a]:text-[rgb(var(--gray-light))] hover:[&>a]:text-[rgb(var(--gray-dark))] dark:hover:[&>a]:text-[rgb(var(--gray))]"
-  >
-    <a href="https://www.linkedin.com/in/abdelghafour-echikr" target="_blank">
-      <span class="sr-only">Connect with me on Linkedin</span>
-      <Icon name="linkedin" size={30} title="linkedin" />
-    </a>
-    <a href="https://twitter.com/Abdelghafour1_" target="_blank">
-      <span class="sr-only">Follow me on Twitter</span>
-      <Icon name="twitter" size={30} title="twitter" />
-    </a>
-    <a href="https://github.com/Abdelghafour122" target="_blank">
-      <span class="sr-only">Go to my GitHub repo</span>
-      <Icon name="github" size={30} title="github" />
-    </a>
-    <a href="mailto:echikr.abdelghafour@hotmail.com" target="_blank">
-      <span class="sr-only">Contact Me</span>
-      <Icon name="mail" size={30} title="mail" />
-    </a>
-    <a href="https://hashnode.com/@AbdelghafourE" target="_blank">
-      <span class="sr-only">Visit my blog on hashnode</span>
-      <Icon name="hashnode" size={30} title="hashnode" />
-    </a>
-  </div>
+  <ul class="social-links flex flex-row justify-center gap-4 mt-4">
+    {
+      LINK_LIST.map((link) => (
+        <li class="p-1">
+          <a
+            href={link.href}
+            target="_blank"
+            class="transition-colors text-[rgb(var(--gray))] dark:text-[rgb(var(--gray-light))] hover:text-[rgb(var(--gray-dark))] dark:hover:text-[rgb(var(--gray))]"
+          >
+            <span class="sr-only">{link.sronlyText}</span>
+            <Icon name={link.iconName} size={30} title={link.iconName} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </footer>
