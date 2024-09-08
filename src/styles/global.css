@@ -39,14 +39,19 @@ main {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
   font-family: "Londrina Solid";
+}
+h4,
+h5,
+h6 {
+  margin: 0 0 0.2rem 0;
+  color: rgb(var(--black));
+  line-height: 1;
+  font-family: "Nunito";
 }
 h1 {
   font-size: 4.052em;
@@ -66,16 +71,6 @@ h5 {
 strong,
 b {
   font-weight: 700;
-}
-a.link {
-  color: var(--accent);
-}
-a:hover {
-  color: var(--accent);
-}
-p {
-  /* remove this, make custom margin or spacing */
-  /* margin-bottom: 1em; */
 }
 .prose p {
   margin-bottom: 2em;
