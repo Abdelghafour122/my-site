@@ -23,7 +23,7 @@ const { title, description, pubDate, updatedDate, heroImage, link } =
       <article>
         <div class="hero-image">
           {
-            heroImage && (
+            heroImage ? (
               <img
                 width={1020}
                 height={510}
@@ -31,7 +31,7 @@ const { title, description, pubDate, updatedDate, heroImage, link } =
                 alt="blog-post-hero-img"
                 class="block my-0 mx-auto rounded-xl shadow-2xl"
               />
-            )
+            ) : null
           }
         </div>
         <Prose>
@@ -51,10 +51,10 @@ const { title, description, pubDate, updatedDate, heroImage, link } =
             <div
               class="link flex items-center justify-center gap-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray-light))] font-semibold"
             >
-              See demo: <a
+              <a
                 href={link}
-                class="underline text-[rgb(var(--accent))] italic transition-colors"
-                >{link}</a
+                class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
+                >Click here to see the demo</a
               >
             </div>
             <h1 class="mb-6 mt-5 text-stone-800 dark:text-stone-100">

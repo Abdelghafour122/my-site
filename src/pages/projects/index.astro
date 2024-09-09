@@ -8,7 +8,7 @@ import FormattedDate from "@components/FormattedDate.astro";
 import { Image } from "astro:assets";
 
 const projects = (await getCollection("projects")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 // refacture css, see if you can make default css classes for everything
