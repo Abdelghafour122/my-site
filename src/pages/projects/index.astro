@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import { StarsBackground } from "@components/ui/stars-background";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,7 +16,7 @@ const projects = (await getCollection("projects")).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="relative">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
@@ -68,5 +69,5 @@ const projects = (await getCollection("projects")).sort(
       </section>
     </main>
     <Footer />
-  </body>
+  </body><StarsBackground client:idle />
 </html>
