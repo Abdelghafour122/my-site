@@ -1,25 +1,22 @@
 ---
 title: "My personal website"
 description: "A simple Astro and tailwindcss website."
-pubDate: "Nov 21 2024"
-heroImage: /blog-placeholder-2.jpg
-link: https://github.com/Abdelghafour122/my-site
+pubDate: "Sep 20 2024"
+heroImage: /personal-site-hero.png
+link: https://abdelghafour.vercel.app
+githubRepoLink: https://github.com/Abdelghafour122/my-site
 ---
 
-This should be a simple paragraph of text that describes the project.
+## Features
 
-## Features (some already built, some planned)
-
-- Simple and minimal design
+- Simple and minimal design, performance focused, and with minimal JS usage
 - Dark/light mode switching
-- Creating, editing and deleting posts, with one or multiple images and a description
-- Saving, liking and reposting posts
-- Writing comments on posts, reacting to comments, and writing replies to comments
-- Searching for users by name
+- Blog section, using hashnode as CMS
+- Projects section, using markdown files
+- RSS feed
 
-## Usage
+## What I learned building this
 
-1. Clone the repo
-2. Install dependencies, run `npm install` if you're using npm
-3. Make an `.env.local` file in the root directory and add your `NEXT_PUBLIC_GITHUB_ACCESS_TOKEN` in it
-4. Run `npm run dev` to start the dev server
+- Using Astro.js's router, component islands, and content collections
+- How ISR and SSG work
+- How RSS works
