@@ -27,21 +27,18 @@ body {
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
   font-size: 20px;
   line-height: 1.7;
 }
 main {
   max-width: calc(100% - 2em);
   margin: auto;
-  padding: 3em 1em;
+  padding: 6em 1em 3em;
 }
-
 h1,
 h2,
 h3 {
   margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
   line-height: 1.2;
   font-family: "Londrina Solid";
 }
@@ -49,7 +46,6 @@ h4,
 h5,
 h6 {
   margin: 0 0 0.2rem 0;
-  color: rgb(var(--black));
   line-height: 1;
   font-family: "Nunito";
 }
@@ -68,23 +64,6 @@ h4 {
 h5 {
   font-size: 1.25em;
 }
-strong,
-b {
-  font-weight: 700;
-}
-.prose p {
-  margin-bottom: 2em;
-}
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
-input {
-  font-size: 16px;
-}
-table {
-  width: 100%;
-}
 img {
   max-width: 100%;
   height: auto;
@@ -93,10 +72,10 @@ img {
 code {
   padding: 2px 5px;
   border-radius: 2px;
-  @apply bg-[rgb(var(--gray-light))] dark:bg-[rgb(var(--gray-dark))];
+  @apply bg-slate-300 dark:bg-slate-800 transition-colors;
 }
 pre {
-  padding: 1.5em;
+  padding: 1em;
   border-radius: 8px;
 }
 pre > code {
