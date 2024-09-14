@@ -92,12 +92,15 @@ hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
+
+/* maybe replace media queries with tailwind */
 @media (max-width: 720px) {
   body {
     font-size: 18px;
   }
   main {
-    padding: 1em;
+    /* padding: 1em; */
+    padding: 4em 1em 1em;
   }
 }
 
