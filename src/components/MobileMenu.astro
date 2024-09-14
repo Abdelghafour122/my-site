@@ -1,6 +1,7 @@
 ---
 import { LINK_LIST } from "@/consts";
 import { Icon } from "astro-icon/components";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <button
@@ -11,34 +12,22 @@ import { Icon } from "astro-icon/components";
     <span class="sr-only">Open menu</span>
     <Icon name="bars" size={30} title="Bars menu" />
   </div>
-  <!-- <div class="close">
+  <div class="close hidden">
     <span class="sr-only">Close menu</span>
     <Icon name="close" size={30} title="Close menu" />
-  </div> -->
+  </div>
 </button>
 
-<!-- class="mobile-nav absolute top-[calc(100%_+_2px)] left-0 w-full bg-stone-200 dark:bg-neutral-900 text-stone-800 dark:text-stone-300 transition-colors flex-col items-start justify-start gap-4" -->
 <div
-  class="mobile-nav absolute top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-stone-200 dark:bg-stone-900 transition-colors flex sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5"
+  id="mobile-nav"
+  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5"
 >
   <ul
-    class="flex flex-col items-center justify-start gap-3 *:transition-colors text-stone-800 dark:text-[rgb(var(--gray-light))]"
+    class="flex flex-col items-center justify-start gap-3 *:transition-colors"
   >
-    <li
-      class="font-['Nunito'] text-2xl font-bold hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
-    >
-      <a href="/home" class="hover:text">Home</a>
-    </li>
-    <li
-      class="font-['Nunito'] text-2xl font-bold hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
-    >
-      <a href="/blog">Blog</a>
-    </li>
-    <li
-      class="font-['Nunito'] text-2xl font-bold hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
-    >
-      <a href="/projects">Projects</a>
-    </li>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/projects">Projects</HeaderLink>
   </ul>
   <ul
     class="social-links flex flex-row justify-center gap-4 pt-4 border-t border-t-stone-400"
@@ -62,12 +51,25 @@ import { Icon } from "astro-icon/components";
 
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const openMenu = mobileMenu.querySelector(".open");
-    const closeMenu = mobileMenu.querySelector(".close");
+    const mobileMenuButton = document.getElementById("mobile-menu");
+    const openMenu = mobileMenuButton.querySelector(".open");
+    const closeMenu = mobileMenuButton.querySelector(".close");
+    const overlay = document.getElementById("overlay");
 
-    mobileMenu.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    console.log(openMenu, closeMenu);
+
+    mobileMenuButton.addEventListener("click", () => {
+      overlay.classList.toggle("hidden");
+      document.querySelector("body").classList.toggle("overflow-hidden");
+      if (closeMenu.classList.contains("hidden")) {
+        mobileNav.classList.replace("hidden", "flex");
+      } else {
+        mobileNav.classList.replace("flex", "hidden");
+      }
+      openMenu.classList.toggle("hidden");
+      closeMenu.classList.toggle("hidden");
     });
   });
 </script>

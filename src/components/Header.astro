@@ -14,7 +14,8 @@ import MobileMenu from "./MobileMenu.astro";
     <MobileMenu />
     <!-- hidden -->
     <div
-      class="overlay absolute top-[calc(100%_+_2px)] left-2/4 -translate-x-2/4 w-screen h-screen -z-10 bg-black/50 dark:bg-black/80 transition-opacity"
+      id="overlay"
+      class="absolute hidden top-[calc(100%_+_2px)] left-2/4 -translate-x-2/4 w-screen h-screen -z-10 bg-black/50 dark:bg-black/80 transition-opacity sm:hidden"
     >
     </div>
     <div class="left flex items-center gap-9">
@@ -34,7 +35,9 @@ import MobileMenu from "./MobileMenu.astro";
     </div>
     <div class="right flex items-center justify-center gap-7">
       <DarkModeSwitch />
-      <div class="social-links flex items-center justify-center gap-4">
+      <div
+        class="social-links [&_a]:sm:flex hidden sm:flex items-center justify-center gap-4"
+      >
         <SocialLink
           iconName={IconEnum.linkedIn}
           srText="Connect with me on Linkedin"
@@ -54,12 +57,7 @@ import MobileMenu from "./MobileMenu.astro";
     </div>
   </nav>
 </header>
-<style>
-  nav a.active {
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 900;
-  }
+<!-- <style>
   .social-links,
   .social-links a {
     display: flex;
@@ -69,4 +67,4 @@ import MobileMenu from "./MobileMenu.astro";
       display: none;
     }
   }
-</style>
+</style> -->
