@@ -12,17 +12,17 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 
 <BaseLayout>
   <main
-    class="index flex flex-col items-center justify-center w-[960px] gap-64"
+    class="index flex flex-col items-center justify-center w-[960px] gap-20 sm:gap-24 md:gap-44 lg:gap-64"
   >
     <section
-      class="text flex flex-col text-center justify-center items-center w-auto lg:w-[960px] gap-10"
+      class="text flex flex-col text-center justify-center items-center w-auto lg:w-[960px] gap-7 md:gap-10"
     >
       <div class="upper">
         <h1 class="text-center text-stone-800 dark:text-stone-50">
           Hello 👋, My name is Abdelghafour Echikr
         </h1>
         <p
-          class="font-bold text-3xl text-stone-800 dark:text-stone-50 m-0 font-[Lato]"
+          class="font-bold text-xl sm:text-2xl md:text-3xl text-stone-800 dark:text-stone-50 m-0 font-[Lato]"
         >
           Software Engineering Student | Web Developer
         </p>
@@ -30,7 +30,7 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           class="desc w-full flex flex-col items-center justify-center gap-0"
         >
           <p
-            class="text-center text-3xl text-stone-800 dark:text-stone-300 my-5"
+            class="text-center text-xl sm:text-3xl text-stone-800 dark:text-stone-300 my-3 md:my-5"
           >
             I'm passionate about tech, building and developing websites,
             expanding my knowledge on software.
@@ -44,13 +44,15 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
         </div>
       </div>
       <div
-        class="w-3/4 grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10"
+        class="w-3/4 grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-7 md:gap-10"
       >
-        <div class="left flex flex-col w-full gap-10">
+        <div class="left flex flex-col w-full gap-7 md:gap-10">
           <div
-            class="projects flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-7 gap-4"
+            class="projects flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4"
           >
-            <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
+            <p
+              class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+            >
               Take a look at my projects, see what I'm working on
             </p>
             <a
@@ -60,9 +62,11 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
             >
           </div>
           <div
-            class="articles flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-7 gap-4"
+            class="articles flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4"
           >
-            <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
+            <p
+              class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+            >
               Visit my blog, see what I'm writing
             </p>
             <a
@@ -73,16 +77,18 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           </div>
         </div>
         <div
-          class="contact flex flex-col items-center justify-center gap-7 border border-stone-800 dark:border-stone-500 rounded-md p-7 h-full"
+          class="contact flex flex-col items-center justify-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4 h-full"
         >
-          <p class="text-3xl text-stone-800 dark:text-stone-300 mb-0">
+          <p
+            class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+          >
             If you're ready to bring ideas to life or collaborate, hit the
             button below!
           </p>
           <a
             href="mailto:echikr.abdelghafour@hotmail.com"
             target="_blank"
-            class="py-4 px-12 text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform"
+            class="py-2 sm:py-4 px-6 sm:px-12 text-stone-50 font-extrabold text-xl sm:text-2xl md:text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform"
           >
             Contact me
           </a>
@@ -93,9 +99,11 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
     <section class="intro" id="about">
       <div class="w-full flex items-start justify-center gap-10">
         <div class="text text-stone-800 dark:text-stone-300">
-          <h2 class="text-6xl tracking-wide text-stone-800 dark:text-stone-100">
+          <h1
+            class="text-center md:text-left racking-wide text-stone-800 dark:text-stone-100"
+          >
             About me
-          </h2>
+          </h1>
           <p
             class="leading-snug flex flex-col items-start justify-start gap-3 mb-3"
           >
@@ -126,17 +134,25 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           >
         </div>
 
-        <img src="/portrait.jpg" width={350} height={350} alt="portrait-img" />
+        <img
+          src="/portrait.jpg"
+          class="hidden md:block"
+          width={350}
+          height={350}
+          alt="portrait-img"
+        />
       </div>
     </section>
 
     <section
-      class="projects flex flex-col items-center justify-center w-full gap-5"
+      class="projects flex flex-col items-center justify-center w-full gap-0 sm:gap-2 md:gap-5"
     >
-      <h2 class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide">
+      <h1 class="text-stone-800 dark:text-stone-100 tracking-wide mb-0">
         Education
-      </h2>
-      <div class="w-full flex gap-4 items-start justify-between">
+      </h1>
+      <div
+        class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
+      >
         <div class="left flex flex-col items-start justify-center">
           <h3
             class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
@@ -152,7 +168,9 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           <p class="dark:text-[rgb(var(--gray-light))]">2022 - 2025</p>
         </div>
       </div>
-      <div class="w-full flex gap-4 items-start justify-between">
+      <div
+        class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
+      >
         <div class="left flex flex-col items-start justify-center">
           <h3
             class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
@@ -171,30 +189,30 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
     </section>
 
     <section
-      class="contact flex flex-col items-center justify-center w-full mb-24"
+      class="contact flex flex-col items-center justify-center w-full md:mb-16 lg:mb-24"
     >
-      <h2
-        class="text-stone-800 dark:text-stone-100 text-6xl tracking-wide mb-0"
-      >
+      <h1 class="text-stone-800 dark:text-stone-100 tracking-wide mb-0">
         Contact me!
-      </h2>
+      </h1>
       <div
         class="text-stone-800 dark:text-stone-300 text-center leading-tight my-3 mb-5"
       >
-        <div class="font-bold text-4xl text-stone-700 dark:text-stone-300 mb-5">
+        <div
+          class="font-bold text-2xl sm:text-4xl text-stone-700 dark:text-stone-300 mb-5"
+        >
           Questions or collaborations?
         </div>
-        <div class="text-2xl text-stone-800 dark:text-stone-300">
+        <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
           Click the button below to get in touch
         </div>
-        <div class="text-2xl text-stone-800 dark:text-stone-300">
+        <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
           Looking forward to hearing from you!
         </div>
       </div>
       <a
         href="mailto:echikr.abdelghafour@hotmail.com"
         target="_blank"
-        class="py-4 px-12 text-stone-50 hover:text-stone-50 font-extrabold text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform hover:text-[var(--accent)]"
+        class="py-2 sm:py-4 px-6 sm:px-12 text-stone-50 font-extrabold text-xl sm:text-2xl md:text-3xl bg-[var(--accent)] dark:bg-[rgb(var(--gray))] rounded-md hover:scale-110 transition-transform"
       >
         Contact me
       </a>

@@ -50,19 +50,19 @@ h6 {
   font-family: "Nunito";
 }
 h1 {
-  font-size: 4.052em;
+  font-size: clamp(2.841em, 6vw, 4em);
 }
 h2 {
-  font-size: 2.441em;
+  font-size: clamp(2.085em, 6vw, 2.441em);
 }
 h3 {
-  font-size: 1.953em;
+  font-size: clamp(1.786em, 6vw, 1.953em);
 }
 h4 {
-  font-size: 1.563em;
+  font-size: clamp(1.34em, 6vw, 1.563em);
 }
 h5 {
-  font-size: 1.25em;
+  font-size: clamp(0.8em, 6vw, 1.25em);
 }
 img {
   max-width: 100%;
@@ -92,12 +92,14 @@ hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
+
+/* maybe replace media queries with tailwind */
 @media (max-width: 720px) {
   body {
     font-size: 18px;
   }
   main {
-    padding: 1em;
+    padding: 5em 1em;
   }
 }
 

@@ -4,18 +4,30 @@ import { IconEnum } from "@/consts";
 import HeaderLink from "./HeaderLink.astro";
 import DarkModeSwitch from "@components/DarkModeSwitch.astro";
 import SocialLink from "./SocialLink.astro";
+import MobileMenu from "./MobileMenu.astro";
 ---
 
 <header
-  class="fixed top-0 w-full bg-stone-200 dark:bg-neutral-900 dark:border-b dark:border-b-stone-400 drop-shadow-[0_2px_8px_rgba(var(--black),0.08)] px-4 py-0 m-0"
+  class="fixed top-0 w-full bg-stone-200 dark:bg-neutral-900 dark:border-b dark:border-b-stone-400 drop-shadow-[0_2px_8px_rgba(var(--black),0.08)] px-0 sm:px-4 py-0 m-0"
 >
-  <nav class="flex items-center justify-between py-2 px-10">
+  <nav class="flex relative items-center justify-between py-2 px-5 sm:px-10">
+    <MobileMenu />
+    <!-- hidden -->
+    <div
+      id="overlay"
+      class="absolute hidden top-[calc(100%_+_2px)] left-2/4 -translate-x-2/4 w-screen h-screen -z-10 bg-black/50 dark:bg-black/80 transition-opacity sm:hidden"
+    >
+    </div>
     <div class="left flex items-center gap-9">
       <div class="logo flex">
         <span class="sr-only">Logo</span>
         <Icon name="logo" size={50} title="that's my logo ;)" />
       </div>
-      <div class="internal-links flex items-center justify-center gap-4">
+      <!-- class="internal-links items-center justify-center gap-4 hidden sm:flex" -->
+      <!-- <div class="internal-links items-center justify-center gap-4"> -->
+      <div
+        class="internal-links items-center justify-center gap-4 hidden sm:flex"
+      >
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="/projects">Projects</HeaderLink>
@@ -23,7 +35,9 @@ import SocialLink from "./SocialLink.astro";
     </div>
     <div class="right flex items-center justify-center gap-7">
       <DarkModeSwitch />
-      <div class="social-links flex items-center justify-center gap-4">
+      <div
+        class="social-links [&_a]:sm:flex hidden sm:flex items-center justify-center gap-4"
+      >
         <SocialLink
           iconName={IconEnum.linkedIn}
           srText="Connect with me on Linkedin"
@@ -43,12 +57,7 @@ import SocialLink from "./SocialLink.astro";
     </div>
   </nav>
 </header>
-<style>
-  nav a.active {
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 900;
-  }
+<!-- <style>
   .social-links,
   .social-links a {
     display: flex;
@@ -58,4 +67,4 @@ import SocialLink from "./SocialLink.astro";
       display: none;
     }
   }
-</style>
+</style> -->

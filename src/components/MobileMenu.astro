@@ -1,0 +1,75 @@
+---
+import { LINK_LIST } from "@/consts";
+import { Icon } from "astro-icon/components";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<button
+  id="mobile-menu"
+  class="sm:hidden transition-colors text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))]"
+>
+  <div class="open">
+    <span class="sr-only">Open menu</span>
+    <Icon name="bars" size={30} title="Bars menu" />
+  </div>
+  <div class="close hidden">
+    <span class="sr-only">Close menu</span>
+    <Icon name="close" size={30} title="Close menu" />
+  </div>
+</button>
+
+<div
+  id="mobile-nav"
+  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5"
+>
+  <ul
+    class="flex flex-col items-center justify-start gap-3 *:transition-colors"
+  >
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/projects">Projects</HeaderLink>
+  </ul>
+  <ul
+    class="social-links flex flex-row justify-center gap-4 pt-4 border-t border-t-stone-400"
+  >
+    {
+      LINK_LIST.map((link) => (
+        <li class="p-1">
+          <a
+            href={link.href}
+            target="_blank"
+            class="transition-colors text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))]"
+          >
+            <span class="sr-only">{link.sronlyText}</span>
+            <Icon name={link.iconName} size={30} title={link.iconName} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const mobileMenuButton = document.getElementById("mobile-menu");
+    const openMenu = mobileMenuButton.querySelector(".open");
+    const closeMenu = mobileMenuButton.querySelector(".close");
+    const overlay = document.getElementById("overlay");
+
+    const mobileNav = document.getElementById("mobile-nav");
+
+    console.log(openMenu, closeMenu);
+
+    mobileMenuButton.addEventListener("click", () => {
+      overlay.classList.toggle("hidden");
+      document.querySelector("body").classList.toggle("overflow-hidden");
+      if (closeMenu.classList.contains("hidden")) {
+        mobileNav.classList.replace("hidden", "flex");
+      } else {
+        mobileNav.classList.replace("flex", "hidden");
+      }
+      openMenu.classList.toggle("hidden");
+      closeMenu.classList.toggle("hidden");
+    });
+  });
+</script>
