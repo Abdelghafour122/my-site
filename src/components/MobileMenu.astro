@@ -20,7 +20,7 @@ import HeaderLink from "./HeaderLink.astro";
 
 <div
   id="mobile-nav"
-  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5"
+  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5 transition-all duration-300 opacity-0 scale-95 origin-top"
 >
   <ul
     class="flex flex-col items-center justify-start gap-3 *:transition-colors"
@@ -55,21 +55,35 @@ import HeaderLink from "./HeaderLink.astro";
     const openMenu = mobileMenuButton.querySelector(".open");
     const closeMenu = mobileMenuButton.querySelector(".close");
     const overlay = document.getElementById("overlay");
-
     const mobileNav = document.getElementById("mobile-nav");
-
-    console.log(openMenu, closeMenu);
 
     mobileMenuButton.addEventListener("click", () => {
       overlay.classList.toggle("hidden");
       document.querySelector("body").classList.toggle("overflow-hidden");
       if (closeMenu.classList.contains("hidden")) {
         mobileNav.classList.replace("hidden", "flex");
+        setTimeout(() => {
+          mobileNav.classList.add("opacity-100", "scale-100");
+        }, 10);
       } else {
-        mobileNav.classList.replace("flex", "hidden");
+        mobileNav.classList.remove("opacity-100", "scale-100");
+        setTimeout(() => {
+          mobileNav.classList.replace("flex", "hidden");
+        }, 300);
       }
       openMenu.classList.toggle("hidden");
       closeMenu.classList.toggle("hidden");
     });
   });
 </script>
+
+<style>
+  #mobile-menu .open,
+  #mobile-menu .close {
+    transition: transform 0.3s ease;
+  }
+  #mobile-menu:hover .open,
+  #mobile-menu:hover .close {
+    transform: scale(1.1);
+  }
+</style>
