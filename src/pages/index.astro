@@ -18,8 +18,16 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
       class="text flex flex-col text-center justify-center items-center w-auto lg:w-[960px] gap-7 md:gap-10"
     >
       <div class="upper">
-        <h1 class="text-center text-stone-800 dark:text-stone-50">
-          Hello 👋, My name is Abdelghafour Echikr
+        <h1
+          class="text-center hidden md:block text-stone-800 dark:text-stone-50"
+        >
+          <span class="block">Hello 👋, My name is</span>
+          <span class="block">Abdelghafour Echikr</span>
+        </h1>
+        <h1
+          class="uppercase md:capitalize text-center block md:hidden text-stone-800 dark:text-stone-50"
+        >
+          Abdelghafour Echikr
         </h1>
         <p
           class="font-bold text-xl sm:text-2xl md:text-3xl text-stone-800 dark:text-stone-50 m-0 font-[Lato]"
@@ -51,7 +59,7 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
             class="projects flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4"
           >
             <p
-              class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+              class="text-2xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
             >
               Take a look at my projects, see what I'm working on
             </p>
@@ -65,7 +73,7 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
             class="articles flex flex-col justify-start items-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4"
           >
             <p
-              class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+              class="text-2xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
             >
               Visit my blog, see what I'm writing
             </p>
@@ -80,7 +88,7 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           class="contact flex flex-col items-center justify-center border border-stone-800 dark:border-stone-500 rounded-md p-4 sm:p-7 gap-2 sm:gap-4 h-full"
         >
           <p
-            class="text-xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
+            class="text-2xl sm:text-3xl text-stone-800 dark:text-stone-300 mb-0"
           >
             If you're ready to bring ideas to life or collaborate, hit the
             button below!
@@ -100,7 +108,7 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
       <div class="w-full flex items-start justify-center gap-10">
         <div class="text text-stone-800 dark:text-stone-300">
           <h1
-            class="text-center md:text-left racking-wide text-stone-800 dark:text-stone-100"
+            class="uppercase md:capitalize text-center md:text-left racking-wide text-stone-800 dark:text-stone-100"
           >
             About me
           </h1>
@@ -143,66 +151,82 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
     <section
       class="projects flex flex-col items-center justify-center w-full gap-3 sm:gap-4 md:gap-5"
     >
-      <h1 class="text-stone-800 dark:text-stone-100 tracking-wide mb-0">
+      <h1
+        class="uppercase md:capitalize text-stone-800 dark:text-stone-100 tracking-wide mb-0"
+      >
         Education
       </h1>
-      <div
-        class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
-      >
-        <div class="left flex flex-col items-start justify-center">
-          <h3
-            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
-          >
-            SAAD DAHLEB UNIVERSITY
-          </h3>
-          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
-            Masters of Software Engineering
-          </p>
-          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
+      <div class="w-full flex flex-col items-center gap-5">
+        <div
+          class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
+        >
+          <div class="left flex flex-col items-start justify-center">
+            <h3
+              class="text-stone-700 dark:text-stone-200 font-[Lato] text-xl md:text-2xl font-bold"
+            >
+              SAAD DAHLEB UNIVERSITY
+            </h3>
+            <p
+              class="text-stone-800 dark:text-stone-300 text-left leading-tight"
+            >
+              Masters of Software Engineering
+            </p>
+            <p class="text-stone-800 dark:text-stone-300 italic">
+              Blida, Algeria
+            </p>
+          </div>
+          <div class="right">
+            <p class="text-stone-800 dark:text-stone-300 italic">2022 - 2025</p>
+          </div>
         </div>
-        <div class="right">
-          <p class="dark:text-[rgb(var(--gray-light))]">2022 - 2025</p>
-        </div>
-      </div>
-      <div
-        class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
-      >
-        <div class="left flex flex-col items-start justify-center">
-          <h3
-            class="text-stone-700 dark:text-stone-100 font-[Lato] text-2xl font-bold"
-          >
-            SAAD DAHLEB UNIVERSITY
-          </h3>
-          <p class="text-stone-800 dark:text-stone-300 text-left leading-tight">
-            Bachelors of Information Systems and Software Engineering
-          </p>
-          <p class="dark:text-[rgb(var(--gray-light))]">Blida, Algeria</p>
-        </div>
-        <div class="right">
-          <p class="dark:text-[rgb(var(--gray-light))]">2019 - 2022</p>
+        <div
+          class="w-full flex flex-col-reverse sm:flex-row gap-0 sm:gap-4 items-start justify-between"
+        >
+          <div class="left flex flex-col items-start justify-center">
+            <h3
+              class="text-stone-700 dark:text-stone-200 font-[Lato] text-xl md:text-2xl font-bold"
+            >
+              SAAD DAHLEB UNIVERSITY
+            </h3>
+            <p
+              class="text-stone-800 dark:text-stone-300 text-left leading-tight"
+            >
+              Bachelors of Information Systems and Software Engineering
+            </p>
+            <p class="text-stone-800 dark:text-stone-300 italic">
+              Blida, Algeria
+            </p>
+          </div>
+          <div class="right">
+            <p class="text-stone-800 dark:text-stone-300 italic">2019 - 2022</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section
-      class="contact flex flex-col items-center justify-center w-full md:mb-16 lg:mb-24"
+      class="contact flex flex-col items-center justify-center gap-3 w-full md:mb-16 lg:mb-24"
     >
-      <h1 class="text-stone-800 dark:text-stone-100 tracking-wide mb-0">
+      <h1
+        class="uppercase md:capitalize text-stone-800 dark:text-stone-100 tracking-wide mb-0"
+      >
         Get in touch
       </h1>
       <div
-        class="text-stone-800 dark:text-stone-300 text-center leading-tight my-3 mb-5"
+        class="text-stone-800 dark:text-stone-300 text-center leading-tight flex flex-col items-center gap-3"
       >
         <div
-          class="font-bold text-2xl sm:text-4xl text-stone-700 dark:text-stone-300 mb-5"
+          class="font-bold text-2xl sm:text-4xl text-stone-700 dark:text-stone-300"
         >
           Questions or collaborations?
         </div>
-        <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
-          Click the button below to get in touch
-        </div>
-        <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
-          Looking forward to hearing from you!
+        <div class="low">
+          <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
+            Click the button below to get in touch
+          </div>
+          <div class="text-xl sm:text-2xl text-stone-800 dark:text-stone-300">
+            Looking forward to hearing from you!
+          </div>
         </div>
       </div>
       <a
