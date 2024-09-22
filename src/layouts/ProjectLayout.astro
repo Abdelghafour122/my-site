@@ -5,6 +5,7 @@ import Footer from "@components/Footer.astro";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import Prose from "@components/Prose.astro";
+import InProgressChip from "@components/InProgressChip.astro";
 
 type Props = CollectionEntry<"projects">["data"];
 
@@ -44,9 +45,9 @@ const {
         <Prose>
           <div class="title mb-5 py-4 px-0 text-center leading-none">
             <div
-              class="date mb-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray))]"
+              class="date mb-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray))] w-full flex items-center justify-center"
             >
-              <FormattedDate date={pubDate} />
+              {pubDate ? <FormattedDate date={pubDate} /> : <InProgressChip />}
               {
                 updatedDate && (
                   <div class="last-updated-on italic">
@@ -56,7 +57,7 @@ const {
               }
             </div>
             <div
-              class="link flex items-center justify-center gap-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray-light))] font-semibold"
+              class="link font-[Lato] flex items-center justify-center gap-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray-light))] font-semibold"
             >
               <a
                 href={link}

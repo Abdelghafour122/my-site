@@ -1,7 +1,6 @@
 ---
 title: "My personal website"
 description: "A simple Astro and tailwindcss website."
-pubDate: "Sep 20 2024"
 heroImage: /personal-site-hero.png
 link: https://abdelghafour.vercel.app
 githubRepoLink: https://github.com/Abdelghafour122/my-site

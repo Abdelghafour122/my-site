@@ -1,7 +1,6 @@
 ---
 title: "Gallerina - a gallery app"
 description: "A simple gallery app built with Nextjs, NextUI and Supabase."
-pubDate: "Dec 01 2024"
 heroImage: /blog-placeholder-1.jpg
 githubRepoLink: https://github.com/Abdelghafour122/gallery-app
 link: https://gallery-app-nine-rouge.vercel.app
@@ -23,7 +22,7 @@ I chose building this to learn more about Nextjs, I was bored of making CSA with
 1. Clone the repo
 2. Install dependencies, run `npm install` if you're using npm
 3. Initialize a supabase project
-4. Make an `.env.local` file in the root directory of your project and paste this into it:
+4. Make an `.env.local` file in the root directory of your project and paste this, with your own values:
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=
