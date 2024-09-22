@@ -14,7 +14,7 @@ const { iconName, srText, link } = Astro.props;
 <a
   href={link}
   target="_blank"
-  class="text-stone-800 dark:text-stone-200 dark:hover:text-[var(--accent)] transition-colors"
+  class="text-stone-800 dark:text-stone-200 hover:text-[var(--accent)] dark:hover:text-[var(--accent)] transition-colors"
 >
   <span class="sr-only">{srText}</span>
   <Icon name={iconName} size={30} title={iconName} />
