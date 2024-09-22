@@ -22,7 +22,7 @@ const projectsCollection = defineCollection({
     // make sure it's a link, use regex or something
     link: z.string(),
     githubRepoLink: z.string(),
-    pubDate: z.coerce.date(),
+    pubDate: z.coerce.date().optional(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string(),
   }),

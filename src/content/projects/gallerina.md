@@ -1,7 +1,6 @@
 ---
 title: "Gallerina - a gallery app"
 description: "A simple gallery app built with Nextjs, NextUI and Supabase."
-pubDate: "Dec 01 2024"
 heroImage: /blog-placeholder-1.jpg
 githubRepoLink: https://github.com/Abdelghafour122/gallery-app
 link: https://gallery-app-nine-rouge.vercel.app
