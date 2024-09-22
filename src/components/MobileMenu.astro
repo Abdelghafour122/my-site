@@ -6,13 +6,13 @@ import HeaderLink from "./HeaderLink.astro";
 
 <button
   id="mobile-menu"
-  class="sm:hidden transition-colors text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))]"
+  class="sm:hidden transition-all duration-150 text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))] hover:scale-110"
 >
-  <div class="open">
+  <div class="open transition-transform duration-150">
     <span class="sr-only">Open menu</span>
     <Icon name="bars" size={30} title="Bars menu" />
   </div>
-  <div class="close hidden">
+  <div class="close hidden transition-transform duration-150">
     <span class="sr-only">Close menu</span>
     <Icon name="close" size={30} title="Close menu" />
   </div>
@@ -20,10 +20,10 @@ import HeaderLink from "./HeaderLink.astro";
 
 <div
   id="mobile-nav"
-  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5 transition-all duration-300 opacity-0 scale-95 origin-top"
+  class="absolute hidden top-[calc(100%_+_20px)] left-2/4 -translate-x-2/4 w-[90%] bg-neutral-200 dark:bg-neutral-900 sm:hidden flex-col items-center justify-start gap-4 rounded-md shadow-lg dark:border dark:border-stone-400 p-5 transition-all duration-150 opacity-0 scale-95 origin-top"
 >
   <ul
-    class="flex flex-col items-center justify-start gap-3 *:transition-colors"
+    class="flex flex-col items-center justify-start gap-3 *:transition-colors *:duration-150"
   >
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
@@ -38,7 +38,7 @@ import HeaderLink from "./HeaderLink.astro";
           <a
             href={link.href}
             target="_blank"
-            class="transition-colors text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))]"
+            class="transition-colors duration-150 text-stone-800 hover:text-[var(--accent)] dark:text-[rgb(var(--gray-light))] dark:hover:text-[rgb(var(--gray))]"
           >
             <span class="sr-only">{link.sronlyText}</span>
             <Icon name={link.iconName} size={30} title={link.iconName} />
@@ -69,21 +69,10 @@ import HeaderLink from "./HeaderLink.astro";
         mobileNav.classList.remove("opacity-100", "scale-100");
         setTimeout(() => {
           mobileNav.classList.replace("flex", "hidden");
-        }, 300);
+        }, 150);
       }
       openMenu.classList.toggle("hidden");
       closeMenu.classList.toggle("hidden");
     });
   });
 </script>
-
-<style>
-  #mobile-menu .open,
-  #mobile-menu .close {
-    transition: transform 0.3s ease;
-  }
-  #mobile-menu:hover .open,
-  #mobile-menu:hover .close {
-    transform: scale(1.1);
-  }
-</style>
