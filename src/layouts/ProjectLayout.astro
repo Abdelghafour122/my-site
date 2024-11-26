@@ -6,6 +6,7 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import Prose from "@components/Prose.astro";
 import InProgressChip from "@components/InProgressChip.astro";
+import { Icon } from "astro-icon/components";
 
 type Props = CollectionEntry<"projects">["data"];
 
@@ -62,18 +63,19 @@ const {
               <a
                 href={link}
                 class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
-                >Demo</a
-              >&#10022;
+              >
+                <Icon name="globe" size={25} title="View demo" />
+              </a>&#10022;
               <a
                 href={githubRepoLink}
                 class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
-                >Github repo</a
               >
+                <Icon name="github" size={25} title="View github repo" />
+              </a>
             </div>
             <h1 class="mb-6 mt-5 text-stone-800 dark:text-stone-100">
               {title}
             </h1>
-            <hr />
           </div>
           <slot />
         </Prose>

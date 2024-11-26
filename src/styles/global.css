@@ -50,19 +50,20 @@ h6 {
   line-height: 1;
   font-family: "Nunito";
 }
-h1 {
+
+h1:not(.prose *) {
   font-size: clamp(2.841em, 6vw, 4em);
 }
-h2 {
+h2:not(.prose *) {
   font-size: clamp(2.085em, 6vw, 2.441em);
 }
-h3 {
+h3:not(.prose *) {
   font-size: clamp(1.786em, 6vw, 1.953em);
 }
-h4 {
+h4:not(.prose *) {
   font-size: clamp(1.34em, 6vw, 1.563em);
 }
-h5 {
+h5:not(.prose *) {
   font-size: clamp(0.8em, 6vw, 1.25em);
 }
 img {
@@ -75,10 +76,6 @@ code {
   border-radius: 2px;
   @apply bg-slate-300 dark:bg-slate-800 transition-colors;
 }
-pre {
-  padding: 1em;
-  border-radius: 8px;
-}
 pre > code {
   all: unset;
   @apply bg-none dark:bg-transparent;
@@ -89,10 +86,6 @@ blockquote {
   margin: 0px;
   font-size: 1.333em;
 }
-hr {
-  border: none;
-  border-top: 1px solid rgb(var(--gray-light));
-}
 
 /* maybe replace media queries with tailwind */
 @media (max-width: 720px) {
@@ -102,22 +95,4 @@ hr {
   main {
     padding: 5em 1em;
   }
-}
-
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
 }
