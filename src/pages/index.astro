@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 
 const birthday = new Date("08-12-2001");
 const now = new Date();
@@ -139,11 +140,12 @@ const age = Math.abs(ageDate.getUTCFullYear() - 1970);
           </div>
         </div>
 
-        <img
+        <Image
           src="/portrait.jpg"
           class="hidden md:block"
           width={350}
           height={350}
+          loading="lazy"
           alt="portrait-img"
         />
       </div>
