@@ -19,3 +19,4 @@ githubRepoLink: https://github.com/Abdelghafour122/my-site
 - Using Astro.js's router, component islands, and content collections
 - How ISR and SSG work
 - How RSS works
+- What cannonical URLs are
