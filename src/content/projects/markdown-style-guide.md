@@ -4,7 +4,7 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 pubDate: "Jul 01 2022"
 link: "something.com"
 githubRepoLink: "something-else.com"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: /images/blog-placeholder-1.jpg
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

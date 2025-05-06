@@ -1,7 +1,7 @@
 ---
 title: "Express & React todo app"
 description: "A simple todo app built with Reactjs, Shadcn, Express and Postgres."
-heroImage: /blog-placeholder-5.jpg
+heroImage: /images/blog-placeholder-5.jpg
 githubRepoLink: https://github.com/Abdelghafour122/express-todoapp
 link: not-deployed-yet
 ---
