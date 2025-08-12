@@ -46,34 +46,46 @@ const {
           }
         </div>
         <Prose>
-          <div class="title mb-5 py-4 px-0 text-center leading-none">
+          <div
+            class="title flex flex-col items-center justify-center gap-6 py-4 px-0 text-center leading-none"
+          >
             <div
-              class="date mb-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray))] w-full flex items-center justify-center"
+              class="top-info mt-5 flex flex-col items-center justify-center gap-3"
             >
-              {pubDate ? <FormattedDate date={pubDate} /> : <InProgressChip />}
-              {
-                updatedDate && (
-                  <div class="last-updated-on italic">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <div
-              class="link font-[Lato] flex items-center justify-center gap-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray-light))] font-semibold"
-            >
-              <a
-                href={link}
-                class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
+              <div
+                class="date text-[rgb(var(--gray))] w-full flex items-center justify-center flex-col gap-2"
               >
-                <Icon name="globe" size={25} title="View demo" />
-              </a>&#10022;
-              <a
-                href={githubRepoLink}
-                class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
+                {
+                  pubDate ? (
+                    <FormattedDate date={pubDate} />
+                  ) : (
+                    <InProgressChip />
+                  )
+                }
+                {
+                  updatedDate && (
+                    <div class="last-updated-on italic">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <div
+                class="link font-[Lato] flex items-center justify-center gap-3 text-[rgb(var(--gray-dark))] dark:text-[rgb(var(--gray-light))] font-semibold"
               >
-                <Icon name="github" size={25} title="View github repo" />
-              </a>
+                <a
+                  href={link}
+                  class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
+                >
+                  <Icon name="globe" size={25} title="View demo" />
+                </a>&#10022;
+                <a
+                  href={githubRepoLink}
+                  class="underline text-[rgb(var(--accent))] italic transition-colors text-2xl hover:text-[var(--accent)] dark:hover:text-[rgb(var(--gray))]"
+                >
+                  <Icon name="github" size={25} title="View github repo" />
+                </a>
+              </div>
             </div>
             <h1>
               {title}
