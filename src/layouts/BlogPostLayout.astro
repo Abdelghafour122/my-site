@@ -36,8 +36,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           }
         </div>
         <Prose>
-          <div class="title mb-5 py-4 px-0 text-center leading-none">
-            <div class="date mb-6 text-[rgb(var(--gray))]">
+          <div
+            class="title flex flex-col items-center justify-center gap-6 py-4 px-0 text-center leading-none"
+          >
+            <div
+              class="date mt-5 flex flex-col items-center justify-center gap-2 text-[rgb(var(--gray))]"
+            >
               <FormattedDate date={pubDate} />
               {
                 updatedDate && (
@@ -47,7 +51,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
               }
             </div>
-            <h1 class="">
+            <h1>
               {title}
             </h1>
           </div>

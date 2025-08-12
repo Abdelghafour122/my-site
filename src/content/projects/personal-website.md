@@ -1,7 +1,7 @@
 ---
 title: "My personal website"
 description: "A simple Astro and tailwindcss website."
-heroImage: /personal-site-hero.png
+heroImage: /images/personal-site-hero.png
 link: https://abdelghafour.vercel.app
 githubRepoLink: https://github.com/Abdelghafour122/my-site
 ---
@@ -19,3 +19,4 @@ githubRepoLink: https://github.com/Abdelghafour122/my-site
 - Using Astro.js's router, component islands, and content collections
 - How ISR and SSG work
 - How RSS works
+- What cannonical URLs are
